@@ -1,6 +1,8 @@
 
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static jdk.nashorn.internal.objects.NativeFunction.function;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class tech extends javax.swing.JFrame {
 String d="PH-";
-int billno=100;
+int billno=101;
     /**
      * Creates new form tech
      */
@@ -71,9 +73,9 @@ int billno=100;
         cm = new javax.swing.JTextField();
         ca = new javax.swing.JTextField();
         cp = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        calc = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        clear = new javax.swing.JButton();
+        nxtcustomer = new javax.swing.JButton();
         sg1 = new javax.swing.JTextField();
         hp2 = new javax.swing.JTextField();
         co1 = new javax.swing.JTextField();
@@ -82,9 +84,17 @@ int billno=100;
         jLabel17 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         cn = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        dis = new javax.swing.JLabel();
+        dis1 = new javax.swing.JLabel();
+        up = new javax.swing.JLabel();
+        border = new javax.swing.JLabel();
+        border1 = new javax.swing.JLabel();
+        border2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mobile Homes");
+        setAlwaysOnTop(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -117,6 +127,7 @@ int billno=100;
         jLabel4.setText("MODEL");
 
         bill.setEditable(false);
+        bill.setText("PH-100");
         bill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 billActionPerformed(evt);
@@ -179,8 +190,8 @@ int billno=100;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(c1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,56 +269,57 @@ int billno=100;
         accLayout.setHorizontalGroup(
             accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(accLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(accLayout.createSequentialGroup()
                         .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(43, 43, 43)
                         .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(16, 16, 16)
                         .addComponent(e))
                     .addGroup(accLayout.createSequentialGroup()
-                        .addComponent(s1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()
+                        .addComponent(s1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(hp1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(accLayout.createSequentialGroup()
+                                .addComponent(hp1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(h2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(h1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(e3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(h1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(h3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(accLayout.createSequentialGroup()
-                .addGap(93, 93, 93)
-                .addComponent(e3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         accLayout.setVerticalGroup(
             accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accLayout.createSequentialGroup()
+                .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(e)
+                .addGap(187, 187, 187))
+            .addGroup(accLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(s1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(s1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(hp1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(accLayout.createSequentialGroup()
-                        .addComponent(h1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(h1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(e2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hp1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(h3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(e3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(accLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(e)
-                        .addGap(16, 16, 16))
-                    .addGroup(accLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(e3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(accLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(c, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(c, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(c2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel8.setText("jLabel8");
@@ -348,7 +360,7 @@ int billno=100;
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(des1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addComponent(des1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ne)
@@ -358,10 +370,13 @@ int billno=100;
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 102, 204), null, new java.awt.Color(102, 102, 0)));
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel9.setText("COST OF THE MOBILE:");
 
-        jLabel10.setText("COST OF THE ACCESSORIES:");
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel10.setText("COST OF THE ACC.:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel5.setText("COST OF THE PRODUCT:");
 
         cm.setEditable(false);
@@ -382,17 +397,21 @@ int billno=100;
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cm, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cp, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cm, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cp, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(ca))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,13 +431,15 @@ int billno=100;
                 .addGap(7, 7, 7))
         );
 
-        jButton1.setText("CALCULATE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        calc.setText("CALCULATE");
+        calc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                calcActionPerformed(evt);
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("LOG OUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,10 +447,10 @@ int billno=100;
             }
         });
 
-        clear.setText("NEXT CUSTOMER");
-        clear.addActionListener(new java.awt.event.ActionListener() {
+        nxtcustomer.setText("NEXT CUSTOMER");
+        nxtcustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearActionPerformed(evt);
+                nxtcustomerActionPerformed(evt);
             }
         });
 
@@ -450,109 +471,155 @@ int billno=100;
         co1.setText("0");
         co1.setToolTipText("cost of cover");
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\Create Your Business Card   Design Studio 2.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\Create Your Business Card   Design Studi5.png")); // NOI18N
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\Create Your Business Card   Design Studi5.png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\Create Your Business Card   Design Studi5.1.png")); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\Create Your Business Card   Design Studi5.1.png")); // NOI18N
+        jLabel17.setDoubleBuffered(true);
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+
+        cn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cnActionPerformed(evt);
+            }
+        });
+        cn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cnKeyPressed(evt);
+            }
+        });
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), javax.swing.BorderFactory.createTitledBorder(null, "Special Discounts", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION)));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                    .addComponent(dis1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dis, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dis1, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                .addGap(77, 77, 77))
+        );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel8Layout.createSequentialGroup()
-                            .addGap(51, 51, 51)
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel8Layout.createSequentialGroup()
+                                            .addGap(198, 198, 198)
+                                            .addComponent(co1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
+                                            .addComponent(sg1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(105, 105, 105)))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(sg)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                                .addComponent(hph)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(cover, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(hp2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(col, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                .addContainerGap()
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addGap(198, 198, 198)
-                                        .addComponent(co1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
-                                        .addComponent(sg1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(105, 105, 105)))
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(sg)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addGroup(jPanel8Layout.createSequentialGroup()
-                                            .addComponent(hph)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(cover, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(hp2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(28, 28, 28))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(bd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8)
+                                        .addComponent(up, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel8Layout.createSequentialGroup()
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(bill, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                                            .addComponent(cn))))
+                                .addGap(8, 8, 8)))
                         .addGroup(jPanel8Layout.createSequentialGroup()
-                            .addGap(31, 31, 31)
-                            .addComponent(jLabel4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel6)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(col, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(28, 28, 28))
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(bd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel8Layout.createSequentialGroup()
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel1))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(bill, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                                        .addComponent(cn))))
-                            .addGap(8, 8, 8)))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(calc)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nxtcustomer))
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(89, 89, 89)
-                        .addComponent(clear)
-                        .addGap(35, 35, 35)))
-                .addComponent(acc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(209, 209, 209)
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(127, 127, 127))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(acc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jButton2)))
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(border1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(border2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(145, 145, 145))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addGap(156, 156, 156))))
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(103, 103, 103))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 962, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -560,235 +627,522 @@ int billno=100;
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addComponent(acc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(62, 62, 62)
-                        .addComponent(jButton2))
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(bill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(cn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(bd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3))
+                                    .addComponent(up, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(col, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sg)
+                            .addComponent(hph)
+                            .addComponent(cover))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(co1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(acc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(nxtcustomer)
+                                        .addComponent(calc))))
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addGap(16, 16, 16)
-                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel1)
-                                            .addComponent(bill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel2)
-                                            .addComponent(cn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(bd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel3))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(res, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(col, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
+                                .addGap(132, 132, 132)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(sg)
-                                    .addComponent(hph)
-                                    .addComponent(cover))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(sg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(co1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(hp2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton1)
-                                    .addComponent(clear))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jButton2)))
+                        .addGap(4, 4, 4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(border1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(border2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-       des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+des1.setEnabled(false);ba.setEnabled(false);ne.setEnabled(false); 
+jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+jPanel4.setEnabled(false);jLabel5.setEnabled(false);cm.setEnabled(false); 
+jLabel9.setEnabled(false);jLabel10.setEnabled(false);ca.setEnabled(false);
+ cp.setEnabled(false); nxtcustomer.setEnabled(false);calc.setEnabled(false);c1.setEnabled(false); 
+jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+ jLabel7.setEnabled(false);sg.setEnabled(false);hph.setEnabled(false);
+ cover.setEnabled(false); jPanel2.setEnabled(false);jPanel1.setEnabled(false);acc.setEnabled(false);
+ res.setEnabled(false); 
+ bd.setEnabled(false);jLabel3.setEnabled(false);  
        hp1.setVisible(false);
        h1.setEnabled(false);   h2.setEnabled(false);   h3.setEnabled(false);   c2.setEnabled(false);   c.setEnabled(false);
        ba.setEnabled(false);
-       c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6w.jpg"));
+     
+       up.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\up.gif"));
+      border.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\2.gif"));
+      border1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\2.gif"));
+     
+      
+      border2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\2.gif"));
     }//GEN-LAST:event_formWindowOpened
 
+    private void cnKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cnKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){up.setIcon(new ImageIcon(""));
+            bd.setEnabled(true);jLabel3.setEnabled(true);
+            jLabel4.setEnabled(true);jLabel6.setEnabled(true);col.setEnabled(true);
+            res.setEnabled(true);  des1.setEnabled(true);ba.setEnabled(false);ne.setEnabled(true);
+            jLabel4.setEnabled(true);jLabel6.setEnabled(true);col.setEnabled(true);
+            jPanel4.setEnabled(true);jLabel5.setEnabled(true);cm.setEnabled(true);
+            jLabel9.setEnabled(true);jLabel10.setEnabled(true);ca.setEnabled(true);
+            cp.setEnabled(true); nxtcustomer.setEnabled(true);calc.setEnabled(true);c1.setEnabled(true);
+            jLabel4.setEnabled(true);jLabel6.setEnabled(true);col.setEnabled(true);
+            jLabel7.setEnabled(true);sg.setEnabled(true);hph.setEnabled(true);
+            cover.setEnabled(true); jPanel2.setEnabled(true);jPanel1.setEnabled(true);acc.setEnabled(true);
+            res.setEnabled(true);  sg1.setEnabled(true);hp2.setEnabled(true);co1.setEnabled(true);
+            des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+            sg.setSelected(false);cover.setSelected(false);hph.setSelected(false);
+            sg1.setText("0");co1.setText("0");hp2.setText("0");bd.setSelectedItem("SAMSUNG");
+            c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6w.jpg"));
+        }
+        else if(evt.getKeyCode() == 8){
+            up.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\up.gif"));
+            bd.setEnabled(false);jLabel3.setEnabled(false);
+            des1.setEnabled(false);ba.setEnabled(false);ne.setEnabled(false);
+            jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+            jPanel4.setEnabled(false);jLabel5.setEnabled(false);cm.setEnabled(false);
+            jLabel9.setEnabled(false);jLabel10.setEnabled(false);ca.setEnabled(false);
+            cp.setEnabled(false); nxtcustomer.setEnabled(false);calc.setEnabled(false);c1.setEnabled(false);
+            jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+            jLabel7.setEnabled(false);sg.setEnabled(false);hph.setEnabled(false);
+            cover.setEnabled(false); jPanel2.setEnabled(false);jPanel1.setEnabled(false);acc.setEnabled(false);
+            res.setEnabled(false);sg1.setEnabled(false);hp2.setEnabled(false);co1.setEnabled(false);
+            c1.setIcon(new ImageIcon(""));
+            des1.setIcon(new ImageIcon(""));}
+    }//GEN-LAST:event_cnKeyPressed
+
+    private void cnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cnActionPerformed
+
+    private void hp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hp2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hp2ActionPerformed
+
+    private void nxtcustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nxtcustomerActionPerformed
+        if((billno+1)%25==0){
+            dis.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\dis.png"));
+            dis1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\dis1.png"));
+        }else{
+            dis.setIcon(new ImageIcon(""));dis1.setIcon(new ImageIcon(""));
+        }
+        bill.setText(d+(billno=billno+1)+"");
+        bd.setEnabled(false);jLabel3.setEnabled(false);
+        des1.setEnabled(false);ba.setEnabled(false);ne.setEnabled(false);
+        jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+        jPanel4.setEnabled(false);jLabel5.setEnabled(false);cm.setEnabled(false);
+        jLabel9.setEnabled(false);jLabel10.setEnabled(false);ca.setEnabled(false);
+        cp.setEnabled(false); nxtcustomer.setEnabled(true);calc.setEnabled(false);c1.setEnabled(false);
+        jLabel4.setEnabled(false);jLabel6.setEnabled(false);col.setEnabled(false);
+        jLabel7.setEnabled(false);sg.setEnabled(false);hph.setEnabled(false);
+        cover.setEnabled(false); jPanel2.setEnabled(false);jPanel1.setEnabled(false);acc.setEnabled(false);
+        res.setEnabled(false);sg1.setEnabled(false);hp2.setEnabled(false);co1.setEnabled(false);
+        c1.setIcon(new ImageIcon(""));
+        des1.setIcon(new ImageIcon(""));cn.setText("");
+ s1.setIcon(new ImageIcon("")); h1.setIcon(new ImageIcon("")); hp1.setIcon(new ImageIcon("")); 
+  h2.setIcon(new ImageIcon("")); h3.setIcon(new ImageIcon(""));
+ c.setIcon(new ImageIcon("")); c2.setIcon(new ImageIcon("")); e3.setIcon(new ImageIcon(""));e2.setIcon(new ImageIcon(""));
+            up.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\up.gif"));
+
+    }//GEN-LAST:event_nxtcustomerActionPerformed
+
+    private void calcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcActionPerformed
+        int head=Integer.parseInt(hp2.getText());int cov=Integer.parseInt(co1.getText());
+        if(hph.isSelected()){
+            if(head==0){
+                JOptionPane.showMessageDialog(rootPane, "Please select any one of the headphones");cp.setText("");ca.setText("");
+            }
+
+            else if(head!=0)
+            {
+                float a=Integer.parseInt(co1.getText());
+                float b=Integer.parseInt(hp2.getText());
+                float cm5=Integer.parseInt(sg1.getText());
+                ca.setText(""+(a+b+cm5));
+                float costa=Float.parseFloat(ca.getText());
+                float costm=Float.parseFloat(cm.getText());
+                cp.setText((costa+costm)+"");
+            }
+            if(cover.isSelected()){
+                if(cov==0){
+                    JOptionPane.showMessageDialog(rootPane, "Please select any one of the cases");cp.setText("");ca.setText("");
+                }   else if(cov!=0){
+                    float a=Integer.parseInt(co1.getText());
+                    float b=Integer.parseInt(hp2.getText());
+                    float cm5=Integer.parseInt(sg1.getText());
+                    ca.setText(""+(a+b+cm5));
+                    float costa=Float.parseFloat(ca.getText());
+                    float costm=Float.parseFloat(cm.getText());
+                    cp.setText((costa+costm)+"");
+                }
+
+            }
+
+        }
+        else if(cover.isSelected()){
+
+            if(cov!=0){
+                float a=Integer.parseInt(co1.getText());
+                float b=Integer.parseInt(hp2.getText());
+                float cm5=Integer.parseInt(sg1.getText());
+                ca.setText(""+(a+b+cm5));
+                float costa=Float.parseFloat(ca.getText());
+                float costm=Float.parseFloat(cm.getText());
+                cp.setText((costa+costm)+"");
+            }
+            if(hph.isSelected()){
+                if(head==0){
+                    JOptionPane.showMessageDialog(rootPane, "Please select any one of the headphones");cp.setText("");ca.setText("");
+                }
+            }
+
+        }
+
+        else {
+            float a=Integer.parseInt(co1.getText());
+            float b=Integer.parseInt(hp2.getText());
+            float cm5=Integer.parseInt(sg1.getText());
+            ca.setText(""+(a+b+cm5));
+            float costa=Float.parseFloat(ca.getText());
+            float costm=Float.parseFloat(cm.getText());
+            cp.setText((costa+costm)+"");
+        }
+        float costp=Float.parseFloat(cp.getText());
+
+        String brand=(String) bd.getSelectedItem();float cover1=Float.parseFloat(co1.getText());
+        String model=(String) res.getSelectedItem();float screeng=Float.parseFloat(sg1.getText());
+        float costm=Float.parseFloat(cm.getText());float headp=Float.parseFloat(hp2.getText());
+        String colo=(String) col.getSelectedItem();
+
+        if(costp>50000){
+            JOptionPane.showMessageDialog(rootPane,"BRAND - "+brand+"\n"+"MODEL - "+model+"    "+"COLOUR - "+colo+"\n"+"COST OF "+model+"("+colo+")"+"= "+costm+"\n"
+                +model+" SCREEN GUARD- "+screeng+" \n"+brand+" "+"HEAD PHONE- "+headp+"\n"+model+" COVER- "+cover1+"\n"+"COST OF THE PRODUCT-"+costp+"Rs \n"+
+                "COST OF THE PRODUCT WITH DISCOUNT-"+(costp-1500)+"RS");
+        }
+        else{JOptionPane.showMessageDialog(rootPane,"BRAND - "+brand+"\n"+"MODEL - "+model+"    "+"COLOUR - "+colo+"\n"+"COST OF "+model+"("+colo+")"+"= "+costm+"\n"
+            +model+" SCREEN GUARD- "+screeng+" \n"+brand+" "+"HEAD PHONE- "+headp+"\n"+model+" COVER- "+cover1+"\n"+"COST OF THE PRODUCT-"+costp+"Rs \n"
+        );
+
+        }
+        // TODO add your handling code hcosta+costmere:
+    }//GEN-LAST:event_calcActionPerformed
+
+    private void cpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpActionPerformed
+
+    }//GEN-LAST:event_cpActionPerformed
+
+    private void baActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baActionPerformed
+        ne.setEnabled(true);String md1=(String)(res.getSelectedItem());
+
+        if(md1.equalsIgnoreCase("GALAXY S6"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+
+        }
+        if(md1.equalsIgnoreCase("GALAXY S5"))
+        {  des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rg.png"));
+        }
+        if(md1.equalsIgnoreCase("GALAXY S4"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rg.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 6s"))
+        {
+            des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srg.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 5s"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5srg.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 4s"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srg.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Desire 820"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820rg.png"));
+        }
+        if(md1.equalsIgnoreCase("Desire 501"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501rg.png"));
+        }
+        if(md1.equalsIgnoreCase("Desire 601"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601rg.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Lumia 735"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735rg.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Lumia 950XL"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\950rg.png"));
+        }
+        ba.setEnabled(false);
+    }//GEN-LAST:event_baActionPerformed
+
+    private void neActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neActionPerformed
+        ba.setEnabled(true);String md1=(String)(res.getSelectedItem());
+
+        if(md1.equalsIgnoreCase("GALAXY S6"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rh.png"));
+
+        }
+        if(md1.equalsIgnoreCase("GALAXY S5"))
+        {  des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rh.png"));
+        }
+        if(md1.equalsIgnoreCase("GALAXY S4"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rh.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 6s"))
+        {
+            des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srh.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 5s"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5src.png"));
+        }
+        if(md1.equalsIgnoreCase("iPhone 4s"))
+        { des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srh.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Desire 820"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820rh.png"));
+        }
+        if(md1.equalsIgnoreCase("Desire 501"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501rh.png"));
+        }
+        if(md1.equalsIgnoreCase("Desire 601"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601rh.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Lumia 735"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735rh.png"));
+
+        }
+        if(md1.equalsIgnoreCase("Lumia 950XL"))
+        {des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\950rh.png"));
+        }
+        ne.setEnabled(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_neActionPerformed
+
+    private void h3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h3MousePressed
+        // TODO add your handling code here:
+        cover.setEnabled(true);
+    }//GEN-LAST:event_h3MousePressed
+
     private void h3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h3MouseClicked
-sg.setEnabled(true);  cover.setEnabled(true);           if(res.getSelectedIndex()>=0){
-             
+        sg.setEnabled(true);  cover.setEnabled(true);           if(res.getSelectedIndex()>=0){
+
             String md1=(String)(bd.getSelectedItem());
 
             if(md1.equalsIgnoreCase("samsung"))
-            { hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s2.jpg"));
+            { hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s2.jpg"));
                 e.setText("");hp2.setText("350");
             }
             if(md1.equalsIgnoreCase("htc"))
             {hp2.setText("200");
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp1.jpg"));e.setText("");
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp1.jpg"));e.setText("");
             }
 
             if(md1.equalsIgnoreCase("apple"))
             {hp2.setText("850");
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i3.jpg"));
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i3.jpg"));
                 e.setText("");
 
             }
             if(md1.equalsIgnoreCase("microsoft"))
             {
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp1.jpg"));
-hp2.setText("200");
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp1.jpg"));
+                hp2.setText("200");
                 e.setText("");
 
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_h3MouseClicked
 
+    private void h2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h2MousePressed
+        // TODO add your handling code here:
+        cover.setEnabled(true);
+    }//GEN-LAST:event_h2MousePressed
+
     private void h2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h2MouseClicked
-sg.setEnabled(true);  cover.setEnabled(true);           if(res.getSelectedIndex()>=0){
-          
+        sg.setEnabled(true);  cover.setEnabled(true);           if(res.getSelectedIndex()>=0){
+
             String md1=(String)(bd.getSelectedItem());
 
             if(md1.equalsIgnoreCase("samsung"))
-            { hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s3.jpg"));
+            { hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s3.jpg"));
                 hp2.setText("350");
             }
             if(md1.equalsIgnoreCase("htc"))
             {
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp2.jpg"));hp2.setText("200");
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp2.jpg"));hp2.setText("200");
             }
 
             if(md1.equalsIgnoreCase("apple"))
             {
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4.jpg"));
-               hp2.setText("850");
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4.jpg"));
+                hp2.setText("850");
 
             }
             if(md1.equalsIgnoreCase("microsoft"))
             {
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp2.jpg"));
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\hp2.jpg"));
 
-               hp2.setText("200");
+                hp2.setText("200");
 
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_h2MouseClicked
 
+    private void h1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h1MousePressed
+        // TODO add your handling code here:
+        cover.setEnabled(true);
+    }//GEN-LAST:event_h1MousePressed
+
     private void h1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h1MouseClicked
-sg.setEnabled(true);  cover.setEnabled(true);       if(res.getSelectedIndex()>=0){
-           
+        sg.setEnabled(true);  cover.setEnabled(true);       if(res.getSelectedIndex()>=0){
+
             String md1=(String)(bd.getSelectedItem());
 
             if(md1.equalsIgnoreCase("samsung"))
-            { hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4.jpg"));
+            { hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4.jpg"));
                 hp2.setText("350");
             }
             if(md1.equalsIgnoreCase("htc"))
             {hp2.setText("200");
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\htc.jpg"));e.setText("");
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\htc.jpg"));e.setText("");
             }
 
             if(md1.equalsIgnoreCase("apple"))
             {hp2.setText("850");
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i1.jpg"));
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i1.jpg"));
                 e.setText("");
 
             }
             if(md1.equalsIgnoreCase("microsoft"))
             {hp2.setText("200");
-                hp1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\htc.jpg"));
+                hp1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\htc.jpg"));
 
                 e.setText("");
 
             }
         }
-
     }//GEN-LAST:event_h1MouseClicked
 
+    private void c2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MousePressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_c2MousePressed
+
     private void c2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MouseClicked
-sg.setEnabled(true);
-    hph.setEnabled(true);
-     if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){
+        sg.setEnabled(true);
+        hph.setEnabled(true);
+        if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){
 
             String md1=(String)(res.getSelectedItem());
 
             if(md1.equalsIgnoreCase("GALAXY S6"))
             { c2.setIcon(new ImageIcon(""));
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c3.jpg"));
-               e3.setIcon(new ImageIcon(""));    co1.setText("500");  }
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c3.jpg"));
+                e3.setIcon(new ImageIcon(""));    co1.setText("500");  }
             if(md1.equalsIgnoreCase("GALAXY S5"))
             {     e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));co1.setText("600");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c2.jpg"));
             }
             if(md1.equalsIgnoreCase("GALAXY S4"))
             { e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));co1.setText("400");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c3.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c3.jpg"));
             }
             if(md1.equalsIgnoreCase("iPhone 6s"))
             {co1.setText("800");
                 e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c1.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c1.jpg"));
 
             }
             if(md1.equalsIgnoreCase("iPhone 5s"))
             { e3.setIcon(new ImageIcon("")); c2.setIcon(new ImageIcon(""));co1.setText("700");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c2.jpg"));
             }
             if(md1.equalsIgnoreCase("iPhone 4s"))
             {e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));co1.setText("650");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c2.jpg"));
 
             }
             if(md1.equalsIgnoreCase("Desire 820"))
             {
                 e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));co1.setText("500");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c2.jpg"));
 
             }
             if(md1.equalsIgnoreCase("Desire 501"))
             {e3.setIcon(new ImageIcon("")); c2.setIcon(new ImageIcon(""));co1.setText("400");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c2.jpg"));
             }
             if(md1.equalsIgnoreCase("Desire 601"))
             {e3.setIcon(new ImageIcon("")); c2.setIcon(new ImageIcon(""));co1.setText("450");
 
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c2.jpg"));
             }
             if(md1.equalsIgnoreCase("Lumia 735"))
             {e3.setIcon(new ImageIcon(""));  c2.setIcon(new ImageIcon(""));co1.setText("300");
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c2.jpg"));
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c2.jpg"));
 
             }
             if(md1.equalsIgnoreCase("Lumia 950XL"))
@@ -798,14 +1152,19 @@ sg.setEnabled(true);
 
         }            else
         { c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));
- e3.setIcon(new ImageIcon(""));
+            e3.setIcon(new ImageIcon(""));
         }
         }    // TODO add your handling code here:
     }//GEN-LAST:event_c2MouseClicked
 
+    private void s1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s1MouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_s1MouseClicked
+
     private void cMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cMouseClicked
-sg.setEnabled(true);   hph.setEnabled(true);e3.setIcon(new ImageIcon(""));         c2.setIcon(new ImageIcon());    e.setText("");   
-      if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){
+        sg.setEnabled(true);   hph.setEnabled(true);e3.setIcon(new ImageIcon(""));         c2.setIcon(new ImageIcon());    e.setText("");
+        if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){
 
             String md1=(String)(res.getSelectedItem());
 
@@ -813,44 +1172,39 @@ sg.setEnabled(true);   hph.setEnabled(true);e3.setIcon(new ImageIcon(""));      
             {    co1.setText("550");  }
             if(md1.equalsIgnoreCase("GALAXY S5"))
             {     co1.setText("650");
-                
+
             }
             if(md1.equalsIgnoreCase("GALAXY S4"))
             {co1.setText("450");
-                
+
             }
             if(md1.equalsIgnoreCase("iPhone 6s"))
             {co1.setText("850");
-                
 
             }
             if(md1.equalsIgnoreCase("iPhone 5s"))
             { co1.setText("750");
-              
+
             }
             if(md1.equalsIgnoreCase("iPhone 4s"))
             {co1.setText("550");
-               
 
             }
             if(md1.equalsIgnoreCase("Desire 820"))
             {
-               co1.setText("550");
-                
+                co1.setText("550");
 
             }
             if(md1.equalsIgnoreCase("Desire 501"))
             {co1.setText("650");
-               
+
             }
             if(md1.equalsIgnoreCase("Desire 601"))
             {co1.setText("550");
 
-                
             }
             if(md1.equalsIgnoreCase("Lumia 735"))
             {co1.setText("450");
-              
 
             }
             if(md1.equalsIgnoreCase("Lumia 950XL"))
@@ -865,155 +1219,124 @@ sg.setEnabled(true);   hph.setEnabled(true);e3.setIcon(new ImageIcon(""));      
         } // TODO add your handling code here:
     }//GEN-LAST:event_cMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int head=Integer.parseInt(hp2.getText());int cov=Integer.parseInt(co1.getText());
-if(hph.isSelected()){
-    if(head==0){
-         JOptionPane.showMessageDialog(rootPane, "Please select any one of the headphones");cp.setText("");ca.setText("");
-    }
-        
-        
-       
-        
-    else if(head!=0)
-       {
-            float a=Integer.parseInt(co1.getText());
-float b=Integer.parseInt(hp2.getText());
-float cm5=Integer.parseInt(sg1.getText());
-ca.setText(""+(a+b+cm5));
-float costa=Float.parseFloat(ca.getText());
-float costm=Float.parseFloat(cm.getText());
-cp.setText((costa+costm)+"");
+    private void hphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hphActionPerformed
+
+        if(res.getSelectedIndex()>=0){if(hph.isSelected()==true){
+            sg.setEnabled(false);
+
+            cover.setEnabled(false);
+            h1.setEnabled(true);h2.setEnabled(true);h3.setEnabled(true);hp1.setVisible(true);ca.setText("");cp.setText("");
+            e2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch.png"));
+            String md1=(String)(bd.getSelectedItem());
+
+            if(md1.equalsIgnoreCase("apple"))
+            { h1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\b.jpg"));
+                h2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\r.jpg"));
+                h3.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\g.jpg"));}
+            if(md1.equalsIgnoreCase("htc"))
+            {
+                h1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\db.jpg"));
+                h2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\y.jpg"));
+                h3.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg")); }
+            if(md1.equalsIgnoreCase("samsung"))
+            {
+                h1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\b.jpg"));
+                h2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg"));
+                h3.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\g.jpg")); }
+            if(md1.equalsIgnoreCase("microsoft"))
+            {
+                h1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\db.jpg"));
+                h2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\y.jpg"));
+                h3.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg"));
+            }
+
+        }            else{ hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+            h2.setEnabled(false);h1.setEnabled(false);h2.setEnabled(false);h3.setEnabled(false);hp2.setText("0");cover.setEnabled(true);sg.setEnabled(true);
+            e2.setIcon(new ImageIcon(""));hp1.setVisible(false);
         }
-    if(cover.isSelected()){
-        if(cov==0){
-    JOptionPane.showMessageDialog(rootPane, "Please select any one of the cases");cp.setText("");ca.setText("");
-        }   else if(cov!=0){
-        float a=Integer.parseInt(co1.getText());
-float b=Integer.parseInt(hp2.getText());
-float cm5=Integer.parseInt(sg1.getText());
-ca.setText(""+(a+b+cm5));
-float costa=Float.parseFloat(ca.getText());
-float costm=Float.parseFloat(cm.getText());
-cp.setText((costa+costm)+"");
-    }
-        
-    }
-    
-    
-         
-    
-
-    
-   
-         
-    
-}
-else if(cover.isSelected()){
-    if(cov==0){
-    JOptionPane.showMessageDialog(rootPane, "Please select any one of the cases");cp.setText("");ca.setText("");
         }
-    
-    else if(cov!=0){
-        float a=Integer.parseInt(co1.getText());
-float b=Integer.parseInt(hp2.getText());
-float cm5=Integer.parseInt(sg1.getText());
-ca.setText(""+(a+b+cm5));
-float costa=Float.parseFloat(ca.getText());
-float costm=Float.parseFloat(cm.getText());
-cp.setText((costa+costm)+"");
-    }
-if(hph.isSelected()){
-     if(head==0){
-         JOptionPane.showMessageDialog(rootPane, "Please select any one of the headphones");cp.setText("");ca.setText("");
-    }
-}
-   
-        
-        
-       
-   
-}
-    
-else {
-     float a=Integer.parseInt(co1.getText());
-float b=Integer.parseInt(hp2.getText());
-float cm5=Integer.parseInt(sg1.getText());
-ca.setText(""+(a+b+cm5));
-float costa=Float.parseFloat(ca.getText());
-float costm=Float.parseFloat(cm.getText());
-cp.setText((costa+costm)+"");
-}
-float costp=Float.parseFloat(cp.getText());
-   
- String brand=(String) bd.getSelectedItem();float cover1=Float.parseFloat(co1.getText());
-      String model=(String) res.getSelectedItem();float screeng=Float.parseFloat(sg1.getText());
-      float costm=Float.parseFloat(cm.getText());float headp=Float.parseFloat(hp2.getText());
-      String colo=(String) col.getSelectedItem();
-     
-      if(costp>50000){
-           JOptionPane.showMessageDialog(rootPane,"BRAND - "+brand+"\n"+"MODEL - "+model+"    "+"COLOUR - "+colo+"\n"+"COST OF "+model+"("+colo+")"+"= "+costm+"\n"
-        +model+" SCREEN GUARD- "+screeng+" \n"+brand+" "+"HEAD PHONE- "+headp+"\n"+model+" COVER- "+cover1+"\n"+"COST OF THE PRODUCT-"+costp+"Rs \n"+
-                   "COST OF THE PRODUCT WITH DISCOUNT-"+(costp-1500)+"RS");
-      }
-      else{JOptionPane.showMessageDialog(rootPane,"BRAND - "+brand+"\n"+"MODEL - "+model+"    "+"COLOUR - "+colo+"\n"+"COST OF "+model+"("+colo+")"+"= "+costm+"\n"
-        +model+" SCREEN GUARD- "+screeng+" \n"+brand+" "+"HEAD PHONE- "+headp+"\n"+model+" COVER- "+cover1+"\n"+"COST OF THE PRODUCT-"+costp+"Rs \n"
-                  );
-          
-      }
-// TODO add your handling code hcosta+costmere:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_hphActionPerformed
 
-    private void c2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MousePressed
+    private void coverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coverActionPerformed
+        if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){
+            sg.setEnabled(false);
+
+            hph.setEnabled(false); ca.setText("");cp.setText("");  c2.setEnabled(true);   c.setEnabled(true);e2.setIcon(new ImageIcon(""));
+            e3.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch1.png"));
+            String md1=(String)(res.getSelectedItem());
+
+            if(md1.equalsIgnoreCase("GALAXY S6"))
+            { c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c2.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c3.jpg"));          }
+            if(md1.equalsIgnoreCase("GALAXY S5"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c2.jpg"));
+            }
+            if(md1.equalsIgnoreCase("GALAXY S4"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c1.jpg"));
+
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c3.jpg"));
+            }
+            if(md1.equalsIgnoreCase("iPhone 6s"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c2.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c1.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("iPhone 5s"))
+            {c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("iPhone 4s"))
+            {c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c1.png"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("Desire 820"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("Desire 501"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("Desire 601"))
+            {
+
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("Lumia 735"))
+            {
+                c.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c1.jpg"));
+                c2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c2.jpg"));
+
+            }
+            if(md1.equalsIgnoreCase("Lumia 950XL"))
+            {
+
+            }
+
+        }            else{ c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));hph.setEnabled(true);sg.setEnabled(true);
+            c.setEnabled(false);   c2.setEnabled(false); e3.setIcon(new ImageIcon(""));co1.setText("0");
+            if(hph.isSelected()){
+                e2.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch.png"));
+            }
+            else{
+                e2.setIcon(new ImageIcon(""));
+            }
+        }
+        }
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_c2MousePressed
-
-    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-bill.setText(d+(billno++));
-String cname=(String)(cn.getText());
-          JOptionPane.showMessageDialog(this,"Thank you "+cname+" \nPlease visit again"); 
-    
-            cn.setText("");sg.setSelected(false);hph.setSelected(false);cover.setSelected(false);
-       cp.setText("");ca.setText("");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-       s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
-       h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));c.setIcon(new ImageIcon(""));
-        bd.setSelectedItem("SAMSUNG");cover.setEnabled(true);sg.setEnabled(true);
-        hph.setEnabled(true);   float pay=Float.parseFloat(cp.getText());
-     
-             
-       
-           
-    }//GEN-LAST:event_clearActionPerformed
-
-    private void s1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_s1MouseClicked
-  
-        
-                   // TODO add your handling code here:
-    }//GEN-LAST:event_s1MouseClicked
-
-    private void h3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h3MousePressed
-        // TODO add your handling code here:
-        cover.setEnabled(true);
-    }//GEN-LAST:event_h3MousePressed
-
-    private void h1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h1MousePressed
-        // TODO add your handling code here:
-        cover.setEnabled(true);
-    }//GEN-LAST:event_h1MousePressed
-
-    private void h2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_h2MousePressed
-        // TODO add your handling code here:
-        cover.setEnabled(true);
-    }//GEN-LAST:event_h2MousePressed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        NewJFrame3 tech=new  NewJFrame3 ();
-        tech.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_coverActionPerformed
 
     private void sgKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sgKeyReleased
         s1.setIcon(new ImageIcon(""));// TODO add your handling code here:
@@ -1026,48 +1349,48 @@ String cname=(String)(cn.getText());
     private void sgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sgMouseClicked
         if(res.getSelectedIndex()>=0){if(sg.isSelected()==true){
             String md1=(String)(res.getSelectedItem());ca.setText("");cp.setText("");
-            s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6p.jpg"));
+            s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6p.jpg"));
             if(md1.equalsIgnoreCase("GALAXY S6"))
-            { s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6p.jpg"));
+            { s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6p.jpg"));
                 sg1.setText("300");
             }
             if(md1.equalsIgnoreCase("GALAXY S5"))
             {sg1.setText("250");
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5p.jpg"));
             }
             if(md1.equalsIgnoreCase("GALAXY S4"))
             {sg1.setText("200");
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4pr.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4pr.jpg"));
             }
             if(md1.equalsIgnoreCase("iPhone 6s"))
             {sg1.setText("500");
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
 
             }
             if(md1.equalsIgnoreCase("iPhone 5s"))
-            {s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5p.png"));
+            {s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5p.png"));
                 sg1.setText("450");}
             if(md1.equalsIgnoreCase("iPhone 4s"))
-            {s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4p.jpg"));
+            {s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4p.jpg"));
                 sg1.setText("425");
             }
             if(md1.equalsIgnoreCase("Desire 820"))
             {
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
                 sg1.setText("300");
             }
             if(md1.equalsIgnoreCase("Desire 501"))
             {sg1.setText("200");
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
             }
             if(md1.equalsIgnoreCase("Desire 601"))
             {sg1.setText("200");
 
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
             }
             if(md1.equalsIgnoreCase("Lumia 735"))
             {sg1.setText("250");
-                s1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
+                s1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6p.jpg"));
 
             }
             if(md1.equalsIgnoreCase("Lumia 950XL"))
@@ -1086,353 +1409,313 @@ String cname=(String)(cn.getText());
         // TODO add your handling code here:
     }//GEN-LAST:event_sgItemStateChanged
 
-    private void coverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coverActionPerformed
-       if(res.getSelectedIndex()>=0){if(cover.isSelected()==true){ 
- sg.setEnabled(false);
-
-    
-    hph.setEnabled(false); ca.setText("");cp.setText("");  c2.setEnabled(true);   c.setEnabled(true);e2.setIcon(new ImageIcon(""));
-            e3.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch1.png"));
-            String md1=(String)(res.getSelectedItem());
-
-            if(md1.equalsIgnoreCase("GALAXY S6"))
-            { c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c2.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6c3.jpg"));          }
-            if(md1.equalsIgnoreCase("GALAXY S5"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5c2.jpg"));
-            }
-            if(md1.equalsIgnoreCase("GALAXY S4"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c1.jpg"));
-
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4c3.jpg"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 6s"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c2.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6c1.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("iPhone 5s"))
-            {c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("iPhone 4s"))
-            {c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c1.png"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("Desire 820"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("Desire 501"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("Desire 601"))
-            {
-
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 735"))
-            {
-                c.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c1.jpg"));
-                c2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735c2.jpg"));
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 950XL"))
-            {
-
-            }
-
-        }            else{ c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));hph.setEnabled(true);sg.setEnabled(true);
-            c.setEnabled(false);   c2.setEnabled(false); e3.setIcon(new ImageIcon(""));co1.setText("0");
-            if(hph.isSelected()){
-                e2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch.png"));
-            }
-            else{
-                  e2.setIcon(new ImageIcon(""));
-            }
-        }
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_coverActionPerformed
-
-    private void hphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hphActionPerformed
-
-        if(res.getSelectedIndex()>=0){if(hph.isSelected()==true){
-   sg.setEnabled(false);
-
-    
-    cover.setEnabled(false);
- h1.setEnabled(true);h2.setEnabled(true);h3.setEnabled(true);hp1.setVisible(true);ca.setText("");cp.setText("");
-            e2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ch.png"));
-            String md1=(String)(bd.getSelectedItem());
-
-            if(md1.equalsIgnoreCase("apple"))
-            { h1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\b.jpg"));
-                h2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\r.jpg"));
-                h3.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\g.jpg"));}
-            if(md1.equalsIgnoreCase("htc"))
-            {
-                h1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\db.jpg"));
-                h2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\y.jpg"));
-                h3.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg")); }
-            if(md1.equalsIgnoreCase("samsung"))
-            {
-                h1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\b.jpg"));
-                h2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg"));
-                h3.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\g.jpg")); }
-            if(md1.equalsIgnoreCase("microsoft"))
-            {
-                h1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\db.jpg"));
-                h2.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\y.jpg"));
-h3.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\p.jpg"));
-            }
-
-        }            else{ hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-            h2.setEnabled(false);h1.setEnabled(false);h2.setEnabled(false);h3.setEnabled(false);hp2.setText("0");cover.setEnabled(true);sg.setEnabled(true);
-            e2.setIcon(new ImageIcon(""));hp1.setVisible(false);
-        }
-        }
-    }//GEN-LAST:event_hphActionPerformed
-
     private void colActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_colActionPerformed
-cp.setText("");        if(col.getSelectedIndex()>=0){
+sg.setEnabled(true);      
+hph.setEnabled(true);    
+cover.setEnabled(true);        cp.setText("");        if(col.getSelectedIndex()>=0){
             String col1=(String)(col.getSelectedItem());
             String md1=(String)(res.getSelectedItem());
+            if(billno%25==0){
+                if(md1.equalsIgnoreCase("Desire 820")){
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("18000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("18000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820b.jpg"));
+                    } if(col1.equalsIgnoreCase("blue")){cm.setText("18000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820bl.jpg"));
+                    }
 
-            if(md1.equalsIgnoreCase("GALAXY S6")){
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("50000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6w.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("50500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6b.jpg"));
-                } if(col1.equalsIgnoreCase("SILVER")){cm.setText("51000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6g.jpg"));
+                }
+                if(md1.equalsIgnoreCase("Desire 501"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("12000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("12000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501b.png"));
+                    }
+                    if(col1.equalsIgnoreCase("Pink")){cm.setText("12000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501p.jpeg"));
+                    }
+
                 }
 
+                if(md1.equalsIgnoreCase("Desire 601"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("20000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601w.jpg"));
+                    } if(col1.equalsIgnoreCase("black")){cm.setText("20000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601bla.jpg"));
+                    } if(col1.equalsIgnoreCase("blue")){cm.setText("20000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601b.jpg"));
+                    }
+
+                }
             }
-            if(md1.equalsIgnoreCase("GALAXY S4")){
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("30000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4w.jpeg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("30500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4b.jpeg"));
-                } if(col1.equalsIgnoreCase("PURPLE")){cm.setText("31000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4p.jpg"));
+            else if(billno%25!=0){
+                if(md1.equalsIgnoreCase("GALAXY S6")){
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("50000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("50500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6b.jpg"));
+                    } if(col1.equalsIgnoreCase("SILVER")){cm.setText("51000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss6g.jpg"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("GALAXY S4")){
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("30000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4w.jpeg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("30500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4b.jpeg"));
+                    } if(col1.equalsIgnoreCase("PURPLE")){cm.setText("31000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss4p.jpg"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("GALAXY S5"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("45000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("45500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5b.png"));
+                    }
+
                 }
 
-            }
-            if(md1.equalsIgnoreCase("GALAXY S5"))
-            {
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("45000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5w.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("45500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\ss5b.png"));
+                if(md1.equalsIgnoreCase("iPhone 6s"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("60000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sw.jpg"));
+                    } if(col1.equalsIgnoreCase("GOLD")){cm.setText("60500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sg.jpg"));
+                    } if(col1.equalsIgnoreCase("ROSE")){cm.setText("61000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sr.jpg"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("iPhone 5s"))
+                {
+                    if(col1.equalsIgnoreCase("gold")){cm.setText("48000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5g.jpeg"));
+                    } if(col1.equalsIgnoreCase("BLue")){cm.setText("48500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5b.jpeg"));
+                    } if(col1.equalsIgnoreCase("white")){cm.setText("49000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5w.jpg"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("iPhone 4s"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("35000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("35500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4b.png"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("Desire 820")){
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("20000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("20500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820b.jpg"));
+                    } if(col1.equalsIgnoreCase("blue")){cm.setText("20100");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820bl.jpg"));
+                    }
+
+                }
+                if(md1.equalsIgnoreCase("Desire 501"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("15000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501w.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("15500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501b.png"));
+                    }
+                    if(col1.equalsIgnoreCase("Pink")){cm.setText("16000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501p.jpeg"));
+                    }
+
                 }
 
-            }
+                if(md1.equalsIgnoreCase("Desire 601"))
+                {
+                    if(col1.equalsIgnoreCase("WHITE")){cm.setText("22000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601w.jpg"));
+                    } if(col1.equalsIgnoreCase("black")){cm.setText("22500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601bla.jpg"));
+                    } if(col1.equalsIgnoreCase("blue")){cm.setText("23000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601b.jpg"));
+                    }
 
-            if(md1.equalsIgnoreCase("iPhone 6s"))
-            {
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("60000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sw.jpg"));
-                } if(col1.equalsIgnoreCase("GOLD")){cm.setText("60500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sg.jpg"));
-                } if(col1.equalsIgnoreCase("ROSE")){cm.setText("61000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6sr.jpg"));
                 }
+                if(md1.equalsIgnoreCase("Lumia 735"))
+                {
+                    if(col1.equalsIgnoreCase("orange")){cm.setText("13000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735o.png"));
+                    } if(col1.equalsIgnoreCase("green")){cm.setText("13500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735g.jpg"));
+                    } if(col1.equalsIgnoreCase("black")){cm.setText("14000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735b.png"));
+                    }
 
-            }
-            if(md1.equalsIgnoreCase("iPhone 5s"))
-            {
-                if(col1.equalsIgnoreCase("gold")){cm.setText("48000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5g.jpeg"));
-                } if(col1.equalsIgnoreCase("BLue")){cm.setText("48500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5b.jpeg"));
-                } if(col1.equalsIgnoreCase("white")){cm.setText("49000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5w.jpg"));
                 }
+                if(md1.equalsIgnoreCase("Lumia 950xl"))
+                {
+                    if(col1.equalsIgnoreCase("blue")){cm.setText("25000");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\l950xlb.jpg"));
+                    } if(col1.equalsIgnoreCase("BLACK")){cm.setText("25500");
+                        c1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\l950xlbla.jpg"));
+                    }
 
-            }
-            if(md1.equalsIgnoreCase("iPhone 4s"))
-            {
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("35000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4w.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("35500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4b.png"));
                 }
-
-            }
-            if(md1.equalsIgnoreCase("Desire 820")){
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("20000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820w.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("20500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820b.jpg"));
-                } if(col1.equalsIgnoreCase("blue")){cm.setText("20100");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820bl.jpg"));
-                }
-
-            }
-            if(md1.equalsIgnoreCase("Desire 501"))
-            {
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("15000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501w.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("15500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501b.png"));
-                }
-                if(col1.equalsIgnoreCase("Pink")){cm.setText("16000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501p.jpeg"));
-                }
-
-            }
-
-            if(md1.equalsIgnoreCase("Desire 601"))
-            {
-                if(col1.equalsIgnoreCase("WHITE")){cm.setText("22000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601w.jpg"));
-                } if(col1.equalsIgnoreCase("black")){cm.setText("22500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601bla.jpg"));
-                } if(col1.equalsIgnoreCase("blue")){cm.setText("23000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601b.jpg"));
-                }
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 735"))
-            {
-                if(col1.equalsIgnoreCase("orange")){cm.setText("13000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735o.png"));
-                } if(col1.equalsIgnoreCase("green")){cm.setText("13500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735g.jpg"));
-                } if(col1.equalsIgnoreCase("black")){cm.setText("14000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\lumia735b.png"));
-                }
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 950xl"))
-            {
-                if(col1.equalsIgnoreCase("blue")){cm.setText("25000");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\l950xlb.jpg"));
-                } if(col1.equalsIgnoreCase("BLACK")){cm.setText("25500");
-                    c1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\l950xlbla.jpg"));
-                }
-
             }
         }
-        // TODO add your handling code here:
 
+        // TODO add your handling code here:
     }//GEN-LAST:event_colActionPerformed
 
+    private void billActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_billActionPerformed
+
     private void resActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resActionPerformed
-ca.setText("");     ne.setEnabled(true);  ba.setEnabled(false);
-      co1.setText("");e2.setIcon(new ImageIcon(""));hp2.setText("");sg1.setText("");if(res.getSelectedIndex()>=0){col.removeAllItems();
+sg.setEnabled(true);      
+hph.setEnabled(true);    
+cover.setEnabled(true);
+        e3.setIcon(new ImageIcon(""));
+
+        e2.setIcon(new ImageIcon(""));ca.setText("");     ne.setEnabled(true);  ba.setEnabled(false);
+        co1.setText("");e2.setIcon(new ImageIcon(""));hp2.setText("");sg1.setText("");if(res.getSelectedIndex()>=0){col.removeAllItems();
             String md1=(String)(res.getSelectedItem());
 
-            if(md1.equalsIgnoreCase("GALAXY S6"))
-            {
-                c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
-                hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
-                h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("SILVER");cm.setText("50000"); des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+            if(billno%25==0){
+                if(md1.equalsIgnoreCase("Desire 820"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");
+                    col.addItem("BLUE");cm.setText("18000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("Desire 501"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
+                    h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");col.addItem("PINK");cm.setText("12000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("Desire 601"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");cm.setText("20000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                }
             }
-            if(md1.equalsIgnoreCase("GALAXY S5"))
-            {  c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);
-                cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));
-                hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
-                h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("BLACK");cm.setText("45000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rg.png"));
-            }
-            if(md1.equalsIgnoreCase("GALAXY S4"))
-            { c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
-                cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));
-                hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
-                h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("PURPLE");cm.setText("30000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rg.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 6s"))
-            {
-                c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
-                cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
-                h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("GOLD");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("ROSE");cm.setText("60000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srg.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 5s"))
-            {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
-                hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
-                h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("GOLD");col.addItem("BLUE");
-                col.addItem("WHITE");cm.setText("48000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5srg.png"));
-           sg1.setText("0");   hp2.setText("0");  co1.setText("0"); }
-            if(md1.equalsIgnoreCase("iPhone 4s"))
-            { c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
-                hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
-                h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("BLACK");cm.setText("35000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srg.png"));
-sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-            }
-            if(md1.equalsIgnoreCase("Desire 820"))
-            {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
-                cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
-                h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("WHITE");
-                col.addItem("BLACK");
-                col.addItem("BLUE");cm.setText("20000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 501"))
-            {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);
-                hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
-                h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("BLACK");col.addItem("PINK");cm.setText("15000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 601"))
-            {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
-                cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
-                h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("WHITE");
-                col.addItem("BLACK");cm.setText("22000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
-sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-            }
-            if(md1.equalsIgnoreCase("Lumia 735"))
-            {
-                c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);
-                hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
-                h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
-                col.addItem("ORANGE");
-                col.addItem("GREEN");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("BLACK");cm.setText("13000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
-            }
-            if(md1.equalsIgnoreCase("Lumia 950XL"))
-            {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);hph.setSelected(false);
-                s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
-                h3.setIcon(new ImageIcon(""));
-                col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
-                col.addItem("BLUE");cm.setText("25000");des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+            else {
+                if(md1.equalsIgnoreCase("GALAXY S6"))
+                {
+                    c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("SILVER");cm.setText("50000"); des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("GALAXY S5"))
+                {  c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));
+                    hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
+                    h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("BLACK");cm.setText("45000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rg.png"));
+                }
+                if(md1.equalsIgnoreCase("GALAXY S4"))
+                { c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));
+                    hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
+                    h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("PURPLE");cm.setText("30000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rg.png"));
+                }
+                if(md1.equalsIgnoreCase("iPhone 6s"))
+                {
+                    c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("GOLD");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("ROSE");cm.setText("60000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srg.png"));
+                }
+                if(md1.equalsIgnoreCase("iPhone 5s"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("GOLD");col.addItem("BLUE");
+                    col.addItem("WHITE");cm.setText("48000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5srg.png"));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0"); }
+                if(md1.equalsIgnoreCase("iPhone 4s"))
+                { c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon("")); sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
+                    h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");cm.setText("35000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srg.png"));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                }
+                if(md1.equalsIgnoreCase("Desire 820"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");
+                    col.addItem("BLUE");cm.setText("20000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("Desire 501"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
+                    h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");col.addItem("PINK");cm.setText("15000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("Desire 601"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);
+                    cover.setSelected(false);hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));
+                    h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("WHITE");
+                    col.addItem("BLACK");cm.setText("22000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                    sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                }
+                if(md1.equalsIgnoreCase("Lumia 735"))
+                {
+                    c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);
+                    hph.setSelected(false);s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));
+                    h2.setIcon(new ImageIcon(""));h3.setIcon(new ImageIcon(""));
+                    col.addItem("ORANGE");
+                    col.addItem("GREEN");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("BLACK");cm.setText("13000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+                if(md1.equalsIgnoreCase("Lumia 950XL"))
+                {c.setIcon(new ImageIcon(""));c2.setIcon(new ImageIcon(""));sg.setSelected(false);cover.setSelected(false);hph.setSelected(false);
+                    s1.setIcon(new ImageIcon(""));hp1.setIcon(new ImageIcon(""));h1.setIcon(new ImageIcon(""));h2.setIcon(new ImageIcon(""));
+                    h3.setIcon(new ImageIcon(""));
+                    col.addItem("BLACK");sg1.setText("0");   hp2.setText("0");  co1.setText("0");
+                    col.addItem("BLUE");cm.setText("25000");des1.setIcon(new ImageIcon("C:\\Users\\Melvin Mathew\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
+                }
+
             }
 
         }
     }//GEN-LAST:event_resActionPerformed
 
     private void bdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bdActionPerformed
-        e2.setText("");      if(bd.getSelectedIndex()>=0){res.removeAllItems();
+sg.setEnabled(true);      
+hph.setEnabled(true);    
+cover.setEnabled(true); 
+e2.setText(""); e3.setIcon(new ImageIcon(""));
+        e2.setIcon(new ImageIcon(""));if(bd.getSelectedIndex()>=0){res.removeAllItems();
             String bd1=(String)(bd.getSelectedItem());
 
             if(bd1.equalsIgnoreCase("samsung"))
@@ -1460,109 +1743,14 @@ sg1.setText("0");   hp2.setText("0");  co1.setText("0");
                 res.addItem("Lumia 950XL");
             }
         }
-
     }//GEN-LAST:event_bdActionPerformed
 
-    private void billActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_billActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_billActionPerformed
-
-    private void neActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neActionPerformed
-  ba.setEnabled(true);String md1=(String)(res.getSelectedItem());
-
-            if(md1.equalsIgnoreCase("GALAXY S6"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rh.png"));
-                
-            }
-            if(md1.equalsIgnoreCase("GALAXY S5"))
-            {  des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rh.png"));
-            }
-            if(md1.equalsIgnoreCase("GALAXY S4"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rh.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 6s"))
-            {
-               des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srh.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 5s"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5src.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 4s"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srh.png"));
-
-            }
-            if(md1.equalsIgnoreCase("Desire 820"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820rh.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 501"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501rh.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 601"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601rh.png"));
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 735"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735rh.png"));
-                
-            }
-            if(md1.equalsIgnoreCase("Lumia 950XL"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\950rh.png"));
-            }
-ne.setEnabled(false);
-               // TODO add your handling code here:
-    }//GEN-LAST:event_neActionPerformed
-
-    private void baActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baActionPerformed
-     ne.setEnabled(true);String md1=(String)(res.getSelectedItem());
-
-            if(md1.equalsIgnoreCase("GALAXY S6"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s6rg.png"));
-                
-            }
-            if(md1.equalsIgnoreCase("GALAXY S5"))
-            {  des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s5rg.png"));
-            }
-            if(md1.equalsIgnoreCase("GALAXY S4"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\s4rg.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 6s"))
-            {
-               des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i6srg.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 5s"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i5srg.png"));
-            }
-            if(md1.equalsIgnoreCase("iPhone 4s"))
-            { des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\i4srg.png"));
-
-            }
-            if(md1.equalsIgnoreCase("Desire 820"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\820rg.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 501"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\501rg.png"));
-            }
-            if(md1.equalsIgnoreCase("Desire 601"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\601rg.png"));
-
-            }
-            if(md1.equalsIgnoreCase("Lumia 735"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\735rg.png"));
-                
-            }
-            if(md1.equalsIgnoreCase("Lumia 950XL"))
-            {des1.setIcon(new ImageIcon("C:\\Users\\HomePC\\Documents\\NetBeansProjects\\JavaApplication3\\src\\imagestech\\950rg.png"));
-            }
-ba.setEnabled(false);
-    }//GEN-LAST:event_baActionPerformed
-
-    private void hp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hp2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hp2ActionPerformed
-
-    private void cpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpActionPerformed
-
-    }//GEN-LAST:event_cpActionPerformed
+        NewJFrame3 tech=new  NewJFrame3 ();
+        tech.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1604,11 +1792,14 @@ ba.setEnabled(false);
     private javax.swing.JButton ba;
     private javax.swing.JComboBox bd;
     private javax.swing.JTextField bill;
+    private javax.swing.JLabel border;
+    private javax.swing.JLabel border1;
+    private javax.swing.JLabel border2;
     private javax.swing.JLabel c;
     private javax.swing.JLabel c1;
     private javax.swing.JLabel c2;
     private javax.swing.JTextField ca;
-    private javax.swing.JButton clear;
+    private javax.swing.JButton calc;
     private javax.swing.JTextField cm;
     private javax.swing.JTextField cn;
     private javax.swing.JTextField co1;
@@ -1616,6 +1807,8 @@ ba.setEnabled(false);
     private javax.swing.JCheckBox cover;
     private javax.swing.JTextField cp;
     private javax.swing.JLabel des1;
+    private javax.swing.JLabel dis;
+    private javax.swing.JLabel dis1;
     private javax.swing.JLabel e;
     private javax.swing.JLabel e2;
     private javax.swing.JLabel e3;
@@ -1625,7 +1818,6 @@ ba.setEnabled(false);
     private javax.swing.JLabel hp1;
     private javax.swing.JTextField hp2;
     private javax.swing.JCheckBox hph;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1643,13 +1835,16 @@ ba.setEnabled(false);
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton ne;
+    private javax.swing.JButton nxtcustomer;
     private javax.swing.JComboBox res;
     private javax.swing.JLabel s1;
     private javax.swing.JCheckBox sg;
     private javax.swing.JTextField sg1;
+    private javax.swing.JLabel up;
     // End of variables declaration//GEN-END:variables
 }
